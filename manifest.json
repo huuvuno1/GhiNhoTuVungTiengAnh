@@ -1,22 +1,26 @@
 {
-    "name": "CTMS - Tín chỉ",
+    "name": "Ghi Nhớ Từ Vựng Tiếng Anh",
     "manifest_version": 2,
     "version": "0.0.1",
     "browser_action": {
-        "default_popup": "popup.html"
+        "default_popup": "./popup/popup.html"
     },
     "permissions": ["activeTab", "tabs", "storage"],
     "description": "Count file has checked",
     "content_scripts": [{
         "matches": [
-            "http://ctms.fithou.net.vn/**",
-            "file:///C:/Users/s2huu/Desktop/lungtung/diem3.html"
+            "<all_urls>"
         ],
         "css": [
-            "style.css"
+            "./css/style.css"
         ],
         "js": [
-            "content.js"
+            "./main/content.js"
         ]
-    }]
+    }],
+    "web_accessible_resources": ["images/add-icon.png"],
+    "background": {
+        "page": "./background/background.html",
+        "persistent": false
+    }
 }
